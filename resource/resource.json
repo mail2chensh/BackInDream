@@ -1,0 +1,29 @@
+{
+	"groups":[
+	{
+		"keys":"bgImage,egretIcon,dl_001",
+		"name":"preload"
+	}],
+	"resources":[
+	{
+		"name":"bgImage",
+		"type":"image",
+		"url":"assets/bg.jpg"
+	},
+	{
+		"name":"egretIcon",
+		"type":"image",
+		"url":"assets/egret_icon.png"
+	},
+	{
+		"name":"dl_001",
+		"scale9grid":"46,56,6,4",
+		"type":"image",
+		"url":"assets/dl_001.jpg"
+	},
+	{
+		"name":"description",
+		"type":"json",
+		"url":"config/description.json"
+	}]
+}
