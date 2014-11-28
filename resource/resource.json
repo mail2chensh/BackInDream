@@ -1,7 +1,7 @@
 {
 	"groups":[
 	{
-		"keys":"bgImage,egretIcon,dl_001",
+		"keys":"bgImage,egretIcon,dl_001,menu_bg,menu_item",
 		"name":"preload"
 	}],
 	"resources":[
@@ -25,5 +25,17 @@
 		"name":"description",
 		"type":"json",
 		"url":"config/description.json"
+	},
+	{
+		"name":"menu_item",
+		"scale9grid":"11,12,15,6",
+		"type":"image",
+		"url":"assets/menu_item.png"
+	},
+	{
+		"name":"menu_bg",
+		"scale9grid":"23,21,26,13",
+		"type":"image",
+		"url":"assets/menu_bg.png"
 	}]
 }

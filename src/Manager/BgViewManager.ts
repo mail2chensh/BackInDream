@@ -22,7 +22,7 @@ class BgViewManager {
         this.sceneIDArray = new Array();
     }
 
-    public getBgView():BgView {
+    public getView():BgView {
         return this.bgView;
     }
 
