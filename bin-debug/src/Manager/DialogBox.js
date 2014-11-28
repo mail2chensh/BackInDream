@@ -1,29 +1,25 @@
 /**
  * Created by Administrator on 2014/11/27 0027.
  */
-
-class DialogBox extends egret.Sprite {
-
-    private static instance:DialogBox = null;
-
-    private bgBitMap:egret.Bitmap;
-    private nameField:egret.TextField;
-    private contentField:egret.TextField;
-
-    public static getInstance():DialogBox {
+var __extends = this.__extends || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    __.prototype = b.prototype;
+    d.prototype = new __();
+};
+var DialogBox = (function (_super) {
+    __extends(DialogBox, _super);
+    function DialogBox() {
+        _super.call(this);
+        this.createSubviews();
+    }
+    DialogBox.getInstance = function () {
         if (this.instance == null) {
             this.instance = new DialogBox();
         }
         return this.instance;
-    }
-
-    public constructor() {
-        super();
-        this.createSubviews();
-    }
-
-    private createSubviews():void {
-
+    };
+    DialogBox.prototype.createSubviews = function () {
         this.bgBitMap = new egret.Bitmap();
         this.bgBitMap.texture = RES.getRes("dl_001");
         this.bgBitMap.scale9Grid = RES.getRes("dl_001").scale9Grid;
@@ -31,10 +27,8 @@ class DialogBox extends egret.Sprite {
         this.bgBitMap.height = MacroDefs.stageHeight / 4;
         this.bgBitMap.y = MacroDefs.stageHeight - this.bgBitMap.height;
         this.addChild(this.bgBitMap);
-
         this.bgBitMap.touchEnabled = true;
         this.bgBitMap.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onTouch, this);
-
         this.nameField = new egret.TextField();
         this.addChild(this.nameField);
         this.nameField.x = this.bgBitMap.width / 9;
@@ -42,7 +36,6 @@ class DialogBox extends egret.Sprite {
         this.nameField.width = this.bgBitMap.width * 7 / 9;
         this.nameField.height = this.bgBitMap.height / 8;
         this.nameField.size = 17;
-
         this.contentField = new egret.TextField();
         this.addChild(this.contentField);
         this.contentField.x = this.nameField.x;
@@ -50,12 +43,20 @@ class DialogBox extends egret.Sprite {
         this.contentField.width = this.nameField.width;
         this.contentField.height = this.bgBitMap.height / 4;
         this.contentField.size = 17;
-    }
-
-
-    index:number = 1;
-    private onTouch(ev:egret.TouchEvent) {
-        this.nameField.text = this.index.toString();
-        this.index ++;
-    }
-}
+    };
+    DialogBox.prototype.onTouch = function (ev) {
+    };
+    DialogBox.prototype.showDialogBox = function (roleName, content) {
+        //
+        DialogBox.getInstance().alpha = 1;
+        //
+        this.nameField.text = roleName;
+        this.contentField.text = content;
+    };
+    DialogBox.prototype.hide = function () {
+        DialogBox.getInstance().alpha = 0;
+    };
+    DialogBox.instance = null;
+    return DialogBox;
+})(egret.Sprite);
+//# sourceMappingURL=DialogBox.js.map

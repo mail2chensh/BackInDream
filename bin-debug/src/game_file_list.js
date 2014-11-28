@@ -1,6 +1,6 @@
 var game_file_list = [
     "MacroDefs.js",
-    "DialogBox.js",
     "LoadingUI.js",
+    "Manager/DialogBox.js",
     "Main.js"
 ];
