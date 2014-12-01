@@ -6,7 +6,6 @@
 class MenuItemObject {
 
     public constructor(){
-        super();
     }
 
     public content:string;

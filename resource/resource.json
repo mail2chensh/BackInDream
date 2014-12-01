@@ -1,30 +1,19 @@
 {
 	"groups":[
 	{
-		"keys":"bgImage,egretIcon,dl_001,menu_bg,menu_item",
+		"keys":"dl_001,menu_bg,menu_item",
 		"name":"preload"
+	},
+	{
+		"keys":"MenuConfig,flowConfig,bgViewConfig",
+		"name":"configs"
 	}],
 	"resources":[
-	{
-		"name":"bgImage",
-		"type":"image",
-		"url":"assets/bg.jpg"
-	},
-	{
-		"name":"egretIcon",
-		"type":"image",
-		"url":"assets/egret_icon.png"
-	},
 	{
 		"name":"dl_001",
 		"scale9grid":"46,56,6,4",
 		"type":"image",
 		"url":"assets/dl_001.jpg"
-	},
-	{
-		"name":"description",
-		"type":"json",
-		"url":"config/description.json"
 	},
 	{
 		"name":"menu_item",
@@ -37,5 +26,20 @@
 		"scale9grid":"23,21,26,13",
 		"type":"image",
 		"url":"assets/menu_bg.png"
+	},
+	{
+		"name":"MenuConfig",
+		"type":"json",
+		"url":"config/MenuConfig.json"
+	},
+	{
+		"name":"flowConfig",
+		"type":"json",
+		"url":"config/flowConfig.json"
+	},
+	{
+		"name":"bgViewConfig",
+		"type":"json",
+		"url":"config/bgViewConfig.json"
 	}]
 }

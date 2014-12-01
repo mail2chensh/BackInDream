@@ -17,7 +17,6 @@ class BgView extends egret.Sprite {
         this.addChild(this.bgBitMap);
         this.bgBitMap.width = this.stage.stageWidth;
         this.bgBitMap.height = this.stage.stageHeight;
-        this.loadStartScene();
     }
 
     public loadScene(bg_id:string):void {

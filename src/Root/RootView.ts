@@ -6,6 +6,9 @@
 class RootView extends egret.DisplayObjectContainer {
 
     public menuView:MenuView;
+    public bgview:BgView;
+    public dialogBox:DialogBox;
+    public roleView:RoleView;
 
     public constructor() {
         super();
@@ -15,5 +18,8 @@ class RootView extends egret.DisplayObjectContainer {
     public createSubviews():void {
         this.menuView = MenuManager.getInstance().getView();
         this.addChild(this.menuView);
+
+
+
     }
 }

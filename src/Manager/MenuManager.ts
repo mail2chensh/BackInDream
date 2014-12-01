@@ -10,6 +10,7 @@ class MenuManager {
     private menuView:MenuView;
     private menuDict:Array<any>; //字典，value值是menuItemObj数组
 
+
     public static getInstance():MenuManager {
         if (this.instance == null) {
             this.instance = new MenuManager();
@@ -18,7 +19,6 @@ class MenuManager {
     }
 
     public constructor() {
-        super();
         this.menuView = new MenuView();
     }
 
@@ -28,13 +28,13 @@ class MenuManager {
     }
 
     public loadResource():void {
-        RES.getResAsync("description",this.loadResourceComplete,this)
+        RES.getResAsync("description",this.loadResourceComplete,this);
     }
+
 
     private loadResourceComplete(result:Array<any>):void {
         this.menuDict = new Array();
-        var keys:Array<string> = result[keys];
-        for (var dictKey:string in keys) {
+        for (var dictKey in result) {
             // 生成新的列表存放menuItemObj对象
             var dataArr:Array<any> = new Array();
             var objList:any = result[dictKey];

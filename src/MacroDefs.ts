@@ -3,8 +3,11 @@
  */
 
 
+
+
 class  MacroDefs {
 
     public static stageWidth:number;
     public static stageHeight:number;
 }
+
