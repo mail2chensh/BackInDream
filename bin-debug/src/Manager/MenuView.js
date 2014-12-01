@@ -12,6 +12,7 @@ var MenuView = (function (_super) {
     function MenuView() {
         _super.call(this);
         this.createSubviews();
+        this.itemArray = [];
     }
     MenuView.prototype.createSubviews = function () {
         this.bgBitMap = new egret.Bitmap();
@@ -20,6 +21,7 @@ var MenuView = (function (_super) {
         this.bgBitMap.scale9Grid = RES.getRes("menu_item").scale9Grid;
     };
     MenuView.prototype.createItems = function (arr) {
+        this.clearItems();
         this.bgBitMap.width = MenuItem.itemWidth + 20;
         this.bgBitMap.height = (MenuItem.itemHeight + 10) * arr.length + 40;
         this.bgBitMap.y = (MacroDefs.stageHeight - this.bgBitMap.height) / 2;

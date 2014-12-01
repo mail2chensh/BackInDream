@@ -13,6 +13,7 @@ class  MenuView extends egret.Sprite implements MenuItemDelegate{
     public constructor() {
         super();
         this.createSubviews();
+        this.itemArray = [];
     }
 
     private createSubviews():void {
@@ -24,6 +25,8 @@ class  MenuView extends egret.Sprite implements MenuItemDelegate{
 
 
     public createItems(arr:Array<any>):void {
+        this.clearItems();
+
         this.bgBitMap.width = MenuItem.itemWidth + 20;
         this.bgBitMap.height = (MenuItem.itemHeight + 10) * arr.length + 40;
         this.bgBitMap.y = (MacroDefs.stageHeight - this.bgBitMap.height) / 2;

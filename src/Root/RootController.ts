@@ -25,7 +25,9 @@ class RootController {
     }
 
     public run():void {
-        RES.getResAsync("flowConfig", this.loadFlowConfigComplete, this);
+        MenuManager.getInstance().loadResource();
+
+        //RES.getResAsync("flowConfig", this.loadFlowConfigComplete, this);
     }
 
     private loadFlowConfigComplete(result:Array<any>):void {
@@ -52,6 +54,7 @@ class RootController {
             case IDType.Menu:
                 // RoleManager.getInstance().hide();
                 // DialogBoxManager.getInstance().hide();
+                MenuManager.getInstance().show();
                 MenuManager.getInstance().loadMenuID(scend_id);
                 break;
             case IDType.BgView:

@@ -15,11 +15,12 @@ var MenuManager = (function () {
         return this.menuView;
     };
     MenuManager.prototype.loadResource = function () {
-        RES.getResAsync("description", this.loadResourceComplete, this);
+        RES.getResAsync("MenuConfig", this.loadResourceComplete, this);
     };
     MenuManager.prototype.loadResourceComplete = function (result) {
         this.menuDict = new Array();
         for (var dictKey in result) {
+            console.log("menu id :", dictKey);
             // 生成新的列表存放menuItemObj对象
             var dataArr = new Array();
             var objList = result[dictKey];
@@ -29,6 +30,7 @@ var MenuManager = (function () {
                 itemObj.scend_id = obj["scene_id"];
                 itemObj.content = obj["content"];
                 dataArr.push(itemObj);
+                console.log("scene:", itemObj.scend_id, "content:", itemObj.content);
             }
             this.menuDict[dictKey] = dataArr;
         }
@@ -40,12 +42,11 @@ var MenuManager = (function () {
         }
         var dataArr = this.menuDict[menu_id];
         this.menuView.createItems(dataArr);
-        this.showView();
     };
-    MenuManager.prototype.hideView = function () {
+    MenuManager.prototype.hide = function () {
         this.menuView.hide();
     };
-    MenuManager.prototype.showView = function () {
+    MenuManager.prototype.show = function () {
         this.menuView.show();
     };
     MenuManager.instance = null;

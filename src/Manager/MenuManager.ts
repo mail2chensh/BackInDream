@@ -28,13 +28,13 @@ class MenuManager {
     }
 
     public loadResource():void {
-        RES.getResAsync("description",this.loadResourceComplete,this);
+        RES.getResAsync("MenuConfig",this.loadResourceComplete,this);
     }
-
 
     private loadResourceComplete(result:Array<any>):void {
         this.menuDict = new Array();
         for (var dictKey in result) {
+            console.log("menu id :",dictKey);
             // 生成新的列表存放menuItemObj对象
             var dataArr:Array<any> = new Array();
             var objList:any = result[dictKey];
@@ -45,6 +45,7 @@ class MenuManager {
                 itemObj.scend_id = obj["scene_id"];
                 itemObj.content = obj["content"];
                 dataArr.push(itemObj);
+                console.log("scene:",itemObj.scend_id, "content:",itemObj.content);
             }
             this.menuDict[dictKey] = dataArr;
         }
@@ -58,14 +59,13 @@ class MenuManager {
         var dataArr:Array<MenuItemObject> = this.menuDict[menu_id];
 
         this.menuView.createItems(dataArr);
-        this.showView();
     }
 
-    public hideView():void {
+    public hide():void {
         this.menuView.hide();
     }
 
-    public showView():void {
+    public show():void {
         this.menuView.show();
     }
 

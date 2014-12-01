@@ -14,7 +14,8 @@ var RootController = (function () {
         parentView.stage.addChild(this.rootView);
     }
     RootController.prototype.run = function () {
-        RES.getResAsync("flowConfig", this.loadFlowConfigComplete, this);
+        MenuManager.getInstance().loadResource();
+        //RES.getResAsync("flowConfig", this.loadFlowConfigComplete, this);
     };
     RootController.prototype.loadFlowConfigComplete = function (result) {
         this.sceneIDArr = [];
@@ -36,6 +37,7 @@ var RootController = (function () {
             case 1 /* Menu */:
                 // RoleManager.getInstance().hide();
                 // DialogBoxManager.getInstance().hide();
+                MenuManager.getInstance().show();
                 MenuManager.getInstance().loadMenuID(scend_id);
                 break;
             case 2 /* BgView */:
